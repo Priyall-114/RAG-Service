@@ -1,4 +1,4 @@
-# DocFlow RAG Service
+# RAG Service
 
 A Retrieval-Augmented Generation (RAG) microservice built from scratch in Python — no LangChain, no LlamaIndex. Every piece of the pipeline (chunking, embedding, retrieval, generation) is implemented manually to understand the internals and defend design decisions in depth.
 
@@ -58,7 +58,7 @@ Upload a PDF → the service extracts text, chunks it, generates embeddings, and
 |---|---|---|
 | API framework | FastAPI | Async support, background task processing, minimal boilerplate |
 | PDF extraction | pdfplumber | Reliable text extraction, page-aware |
-| Chunking | Custom recursive chunker | Built manually with configurable size/overlap to understand chunking tradeoffs firsthand |
+| Chunking | Custom recursive chunker | Built manually with current chunk-size:509 and Overlap of 90 characters(Left Overlapping)|
 | Embeddings | Sentence Transformers (`all-MiniLM-L6-v2`) | Free, runs locally, 384-dim vectors, good quality-to-cost ratio for development |
 | Vector store | MongoDB Atlas Vector Search | Same cluster as the main application database — no extra infra; HNSW-based ANN search |
 | LLM | Gemini 2.5 Flash | Fast, inexpensive, sufficient for grounded short-context Q&A |
