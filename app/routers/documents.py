@@ -18,7 +18,7 @@ async def upload_document( user_id:str,file_id:str,s3_key:str,fileName:str,backg
     }
 
 @router.get("/query")
-async def query_documents(user_id:str,question:str,top_k:int=5):
+async def query_documents(user_id:str,question:str,top_k:int=4):
     results=retrieval(user_id,question,top_k)
 
     return{

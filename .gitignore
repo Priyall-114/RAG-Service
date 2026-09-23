@@ -6,6 +6,7 @@ __pycache__/
 # Virtual environments
 .venv/
 venv/
+ragas_env/
 
 # Environment variables
 .env
@@ -19,3 +20,4 @@ venv/
 Thumbs.db
 
 app/config.py
+

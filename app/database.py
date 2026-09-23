@@ -67,14 +67,14 @@ class MongoConnection:
 
 
     
-    def vector_search(self,user_id:str,query_embedding,top_k:int=5):
+    def vector_search(self,user_id:str,query_embedding,top_k:int=4):
         results=self.chunks_collection.aggregate([
             {
                 "$vectorSearch":{
                     "index":"Docflow_index",
                     "path":"embedding",
                     "queryVector":query_embedding.tolist(),
-                    "numCandidates":100,
+                    "numCandidates":200,
                     "limit":top_k,
                     "filter":{"user_id":user_id}
                 }
